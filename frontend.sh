@@ -37,7 +37,7 @@ rm -rf /usr/share/nginx/html/*
 VALIDATE $? "removed default content"
 
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend-v3.zip
-VALIDATE $? "downloaded robosho code"
+VALIDATE $? "downloaded roboshop code"
 
 cd /usr/share/nginx/html 
 VALIDATE $? "moved to usr/share/nginx directory"
@@ -46,10 +46,10 @@ unzip /tmp/frontend.zip
 VALIDATE $? "unzipped frontend code"
 
 rm -rf /etc/nginx/nginx.conf
-VALIDATE $? "copying nginx.conf"
+VALIDATE $? "removing nginx conf"
 
 cp $SCRIPT_DIR/nginx.conf /etc/nginx/nginx.conf
-VALIDATE $? "Copying nginx.conf"
+VALIDATE $? "Copying nginx conf"
 
 systemctl restart nginx 
 VALIDATE $? "Restarting nginx"
