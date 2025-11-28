@@ -1,5 +1,5 @@
 USERID=$(id -u)
-CRIPT_DIR=$PWD
+SCRIPT_DIR=$PWD
 
 if [ $USERID -ne 0 ]
 then 
@@ -45,7 +45,7 @@ VALIDATE $? "unzipping catalogue"
 npm install
 VALIDATE $? "Installing Dependencies"
 
-cp $SCRPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "Copying catalogue service"
 
 systemctl daemon-reload
@@ -53,7 +53,7 @@ systemctl enable catalogue
 systemctl start catalogue
 VALIDATE $? "starting catalogue"
 
-cp $script_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
+cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
 dnf install mongodb-mongosh -y
 VALIDATE $? "installing mongodb client"
 
