@@ -8,7 +8,7 @@ then
     exit 1
 else 
     echo "you are already root user"
-if
+fi
 
 VALIDATE(){
     if [ $1 -eq 0 ]
