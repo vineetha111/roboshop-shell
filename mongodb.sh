@@ -11,11 +11,11 @@ else
 if
 
 VALIDATE(){
-    if [$1 -eq 0 ]
+    if [ $1 -eq 0 ]
     then 
-        echo "$2 is ... SUCCESS "
+        echo "$2 is ... SUCCESS"
     else 
-        echo "$2 is ... FALURE "
+        echo "$2 is ... FALURE"
     fi
 }
 
